@@ -31,7 +31,9 @@
             </block>-->
         </referenceContainer>
         <referenceContainer name="header.container" htmlClass="page" htmlTag="div">
-            <!-- <container name="home.page.container" htmlClass="page" htmlTag="div" before="-"> -->
+            <container name="home.page.slider" htmlClass="homepage-slider" htmlTag="div" after="header.panel.container">
+                 <block class="Pilot\Smile\Block\Slider"  template="Magento_Theme::html/slider.phtml"></block>
+            </container>
             <container name="header.panel.container" htmlClass="header-container" htmlTag="div" before="-">   
                 <container name="header.panel.wrapper" htmlClass="header" htmlTag="div" before="-">
                     <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="header-top">
@@ -63,15 +65,52 @@
                                             <argument name="logo_img_width" xsi:type="number">189</argument>
                                             <argument name="logo_img_height" xsi:type="number">64</argument>
                                         </arguments>
-                                    </block>
+                                    </block> 
+                                    <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
                                 </container>
                             </container>
                         </container>
                     </container>
                 </container>
             </container>
+            <container name="bxslider.container" htmlClass="pageokokok" htmlTag="div" after="header.panel.container">
+            </container>
         </referenceContainer>
         <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">                
+                <arguments>
+                    <argument name="group_name" xsi:type="string">navigation-sections</argument>
+                    <argument name="group_css" xsi:type="string">nav-sections</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="store.menu" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Menu</argument>
+                    </arguments>
+                    <!-- <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="-"/> -->
+                </block>
+                <block class="Magento\Framework\View\Element\Text" name="store.links" group="navigation-sections">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Account</argument>
+                        <argument name="use_force" xsi:type="boolean">true</argument>
+                        <argument name="text" xsi:type="string"><![CDATA[<!-- Account links -->]]></argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="store.settings" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Settings</argument>
+                    </arguments>
+                    <block class="Magento\Store\Block\Switcher" name="store.settings.language" template="Magento_Store::switch/languages.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Directory\Block\Currency" name="store.settings.currency" template="Magento_Directory::currency.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
             <container name="top.container" as="topContainer" label="After Page Header Top" htmlTag="div" htmlClass="top-container"/>
             <block class="Magento\Theme\Block\Html\Breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
         </referenceContainer>
@@ -109,7 +148,13 @@
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\FormKey" name="formkey"/>
         </referenceContainer>
-
+        <referenceContainer name="content">
+            <block name="customer.section.config" class="Magento\Customer\Block\SectionConfig"
+                template="Magento_Customer::js/section-config.phtml"/>
+            <block name="customer.customer.data"
+                class="Magento\Customer\Block\CustomerData"
+                template="Magento_Customer::js/customer-data.phtml"/>
+        </referenceContainer>
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
     </body>

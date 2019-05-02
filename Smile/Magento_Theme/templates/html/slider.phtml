@@ -1,0 +1,43 @@
+<div class="alo alo-slide">
+<?php 
+//echo "<pre>";
+//print_r($block->getSlides());
+?>
+    <div class="main">
+        <div>
+            <div class="magicslider">
+                <div class="bx-wrapper" style="max-width: 100%;">
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 505px;">
+                        <div  class="smile_bxslider">
+                            <?php if(!empty($block->getSlides())) { ?>
+                            <?php foreach ($block->getSlides() as $key => $value) { ?>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="<?php echo $value['slide_image'];?>" alt="magicslider">
+                                </a>
+                                <div class="bx-caption">
+                                    <div class="magic-caption">
+                                        <div class="caption1"><?php echo $value['slide_title'];?></div>
+                                        <div class="caption2 blackcaption">
+                                            <p><?php echo $value['slide_description'];?></p>
+                                        </div>
+                                        <div class="caption3 blackcaption"><a href="#">SHOP NOW !</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } // foreach closed ?>
+                            <?php } // if closed?>
+                        </div>
+                    </div>
+                    <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                        <div class="bx-pager bx-default-pager">
+                            <div class="bx-pager-item"><a href="" data-slide-index="0" class="bx-pager-link active">1</a></div>
+                            <div class="bx-pager-item"><a href="" data-slide-index="1" class="bx-pager-link">2</a></div>
+                        </div>
+                        <div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
