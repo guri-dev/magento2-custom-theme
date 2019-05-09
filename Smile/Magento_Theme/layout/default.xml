@@ -31,9 +31,6 @@
             </block>-->
         </referenceContainer>
         <referenceContainer name="header.container" htmlClass="page" htmlTag="div">
-            <container name="home.page.slider" htmlClass="homepage-slider" htmlTag="div" after="header.panel.container">
-                 <block class="Pilot\Smile\Block\Slider"  template="Magento_Theme::html/slider.phtml"></block>
-            </container>
             <container name="header.panel.container" htmlClass="header-container" htmlTag="div" before="-">   
                 <container name="header.panel.wrapper" htmlClass="header" htmlTag="div" before="-">
                     <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="header-top">
@@ -59,14 +56,18 @@
                         <container name="header.wrapper.container" htmlClass="container" htmlTag="div" before="-">
                             <container name="header.wrapper.row" htmlClass="row" htmlTag="div" before="-">
                                 <container name="header.wrapper.innerbox" htmlClass="inner-box clearfix" htmlTag="div" before="-">
+                                    <container name="header.content.right" htmlClass="header-content-right col-lg-12" htmlTag="div" before="-">
+                                        <container name="container.custom.menu" htmlClass="container custom-menu" htmlTag="div" before="-">
+                                            <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
+                                        </container>
+                                    </container>
                                     <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                                         <arguments>
                                             <argument name="logo_file" xsi:type="string">images/logo.png</argument>
                                             <argument name="logo_img_width" xsi:type="number">189</argument>
                                             <argument name="logo_img_height" xsi:type="number">64</argument>
                                         </arguments>
-                                    </block> 
-                                    <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
+                                    </block>
                                 </container>
                             </container>
                         </container>
@@ -142,7 +143,7 @@
                 <block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" />
             </container>
         </referenceContainer>
-        <referenceContainer name="before.body.end">
+        <referenceContainer name="before.jquery.bxslider.min.jsbody.end">
             <block class="Magento\Theme\Block\Html\Footer" name="absolute_footer" template="Magento_Theme::html/absolute_footer.phtml" />
         </referenceContainer>
         <referenceContainer name="content">
@@ -157,6 +158,8 @@
         </referenceContainer>
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
+        <move element="top.search" destination="header.content.right" />
+        <move element="minicart" destination="header.content.right" />
     </body>
 </page>
 

@@ -1,8 +1,4 @@
 <div class="alo alo-slide">
-<?php 
-//echo "<pre>";
-//print_r($block->getSlides());
-?>
     <div class="main">
         <div>
             <div class="magicslider">
@@ -29,15 +25,31 @@
                             <?php } // if closed?>
                         </div>
                     </div>
-                    <div class="bx-controls bx-has-pager bx-has-controls-direction">
-                        <div class="bx-pager bx-default-pager">
-                            <div class="bx-pager-item"><a href="" data-slide-index="0" class="bx-pager-link active">1</a></div>
-                            <div class="bx-pager-item"><a href="" data-slide-index="1" class="bx-pager-link">2</a></div>
-                        </div>
-                        <div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript" xml="space">
+    require([
+        'jquery',
+        'bxSlider'
+    ], function($){
+        $(document).ready(function() {
+            $('.smile_bxslider').bxSlider( {
+                auto: true,
+			    captions: true,
+                easing: "easeInSine",
+                controls: 1, 
+                pager: 1, 
+                pause: 5000, 
+                speed: 400,
+                onSlideBefore: function(el) {
+                        el.siblings().find('.bx-caption').removeClass('play');
+                        el.find('.bx-caption').addClass('play').addClass('start');				
+                        },
+            });
+        });
+    });
+</script>

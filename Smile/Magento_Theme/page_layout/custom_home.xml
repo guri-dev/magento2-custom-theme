@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <!-- <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="page-header" before="main.content"/> -->
+         <container name="header.container" htmlClass="page" htmlTag="div" before="main.content" >
+            <container name="home.page.slider" htmlClass="main-container col1-layout" htmlTag="div" after="header.panel.container">
+                 <block class="Pilot\Smile\Block\Slider"  template="Magento_Theme::html/slider.phtml"></block>
+                 <block class="Pilot\Smile\Block\Main"  template="Magento_Theme::html/main.phtml"></block>
+            </container>
+            <container name="header.panel.container" htmlClass="header-container" htmlTag="div" before="-">   
+                <container name="header.panel.wrapper" htmlClass="header" htmlTag="div" before="-">
+                    <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="header-top">
+                        <referenceBlock name="header.panel">
+                            <block class="Pilot\Smile\Block\Welcome"  template="Magento_Theme::html/welcome.phtml"></block>
+                            <block class="Pilot\Smile\Block\Phone"  template="Magento_Theme::html/phone.phtml"></block>
+                            <block class="Pilot\Smile\Block\Email"  template="Magento_Theme::html/email.phtml"></block>
+                        </referenceBlock>
+                        <!--<block class="Magento\Framework\View\Element\Template" name="skip_to_content" template="Magento_Theme::html/skip.phtml">
+                            <arguments>
+                                <argument name="target" xsi:type="string">contentarea</argument>
+                                <argument name="label" translate="true" xsi:type="string">Skip to Content</argument>
+                            </arguments>
+                        </block>-->
+                        <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="Magento_Store::switch/languages.phtml"/>
+                        <!--<block class="Magento\Customer\Block\Account\Navigation" name="top.links">
+                            <arguments>
+                                <argument name="css_class" xsi:type="string">header links</argument>
+                            </arguments>
+                        </block>-->
+                    </container>
+                    <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content header-content header-sticker">
+                        <container name="header.wrapper.container" htmlClass="container" htmlTag="div" before="-">
+                            <container name="header.wrapper.row" htmlClass="row" htmlTag="div" before="-">
+                                <container name="header.wrapper.innerbox" htmlClass="inner-box clearfix" htmlTag="div" before="-">
+                                    <container name="header.content.right" htmlClass="header-content-right col-lg-12" htmlTag="div" before="-">
+                                        <container name="container.custom.menu" htmlClass="container custom-menu" htmlTag="div" before="-">
+                                            <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
+                                        </container>
+                                    </container>
+                                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                                        <arguments>
+                                            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                                            <argument name="logo_img_width" xsi:type="number">189</argument>
+                                            <argument name="logo_img_height" xsi:type="number">64</argument>
+                                        </arguments>
+                                    </block>
+                                </container>
+                            </container>
+                        </container>
+                    </container>
+                </container>
+            </container>
+            <container name="bxslider.container" htmlClass="pageokokok" htmlTag="div" after="header.panel.container">
+            </container>
+        </container>
+        <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" />
+    </referenceContainer>
+</layout>

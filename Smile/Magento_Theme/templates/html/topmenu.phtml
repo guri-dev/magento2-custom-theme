@@ -15,46 +15,42 @@
  */
 ?>
 
-<div class="header-content-right col-lg-12">
-    <div class="container custom-menu"> 
-        <div class="magicmenu clearfix">
-            <ul class="nav-desktop sticker">
-                <?php
-                    $categories = $block->getCategoryCollection(); 
-                    $cnt = 1;
-                    foreach ($categories as $category) {
-                       $hasChild = $category->getChildrenCount() >0 ?'hasChild':''; 
-                       $homeClas = $cnt == 1 ?'home active':'cat';
-                      ?>
-                       <li class="level0 <?=$homeClas?> <?=$hasChild;?>">
-                        <a class="level-top" href="<?php echo $category->getUrl();?>">
-                            <span class="icon-home fa fa-home"></span>
-                            <span class="icon-text"><?php echo $category->getName();?></span>
-                        </a>
-                        <?php if($category->getChildrenCount() > 0) { ?>
-                                <div class="level-top-mega" style="left: 11px;">
-                                    <div class="content-mega">
-                                        <div class="content-mega-horizontal" style="width: 1112px;">
-                                            <ul class="level0 mage-column cat-mega" style="width: 75%;">
-                                                <?php
-                                                $cat = $block->getCategoryChildCollection($category->getId());
-                                                foreach ($cat as $cats) { 
-                                                ?>
-                                                <li class="children level1">
-                                                    <a href="<?php echo $cats->getUrl();?>"><span><?php echo $cats->getName();?></span></a>
-                                                </li>   
-                                                <?php } ?> 
-                                            </ul>   
-                                        </div>
-                                    </div>
+<div class="magicmenu clearfix">
+    <ul class="nav-desktop sticker">
+        <?php
+            $categories = $block->getCategoryCollection(); 
+            $cnt = 1;
+            foreach ($categories as $category) {
+                $hasChild = $category->getChildrenCount() >0 ?'hasChild':''; 
+                $homeClas = $cnt == 1 ?'home active':'cat';
+                ?>
+                <li class="level0 <?=$homeClas?> <?=$hasChild;?>">
+                <a class="level-top" href="<?php echo $category->getUrl();?>">
+                    <span class="icon-home fa fa-home"></span>
+                    <span class="icon-text"><?php echo $category->getName();?></span>
+                </a>
+                <?php if($category->getChildrenCount() > 0) { ?>
+                        <div class="level-top-mega" style="left: 11px;">
+                            <div class="content-mega">
+                                <div class="content-mega-horizontal" style="width: 1112px;">
+                                    <ul class="level0 mage-column cat-mega" style="width: 75%;">
+                                        <?php
+                                        $cat = $block->getCategoryChildCollection($category->getId());
+                                        foreach ($cat as $cats) { 
+                                        ?>
+                                        <li class="children level1">
+                                            <a href="<?php echo $cats->getUrl();?>"><span><?php echo $cats->getName();?></span></a>
+                                        </li>   
+                                        <?php } ?> 
+                                    </ul>   
                                 </div>
-                        <?php } ?>    
-                       </li>    
-                <?php $cnt++;?>       
-                <?php } ?>
-            </ul>
-        </div>
-    </div>
+                            </div>
+                        </div>
+                <?php } ?>    
+                </li>    
+        <?php $cnt++;?>       
+        <?php } ?>
+    </ul>
 </div>
 
 

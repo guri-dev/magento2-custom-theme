@@ -5460,3 +5460,15 @@ ul.magictabs{padding: 0; margin: 0 0 30px; text-align: center ;}
 
 
 /* Style magicbrand */
+
+.bx-wrapper .bx-controls-direction a {
+    height: 58px;
+    width: 58px;
+    text-indent: -999em;
+    opacity: 1;
+    background-image: url(http://m1.alothemes.com/smile/skin/frontend/alosmile/default/magiccart/plugin/images/arrows.png);
+    background-repeat: no-repeat;
+    top: 70%;
+    position: absolute;
+    outline: none;
+}
