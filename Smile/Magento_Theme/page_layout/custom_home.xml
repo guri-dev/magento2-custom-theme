@@ -34,18 +34,6 @@
                         <container name="header.wrapper.container" htmlClass="container" htmlTag="div" before="-">
                             <container name="header.wrapper.row" htmlClass="row" htmlTag="div" before="-">
                                 <container name="header.wrapper.innerbox" htmlClass="inner-box clearfix" htmlTag="div" before="-">
-                                    <container name="header.content.right" htmlClass="header-content-right col-lg-12" htmlTag="div" before="-">
-                                        <container name="container.custom.menu" htmlClass="container custom-menu" htmlTag="div" before="-">
-                                            <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
-                                        </container>
-                                    </container>
-                                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
-                                        <arguments>
-                                            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-                                            <argument name="logo_img_width" xsi:type="number">189</argument>
-                                            <argument name="logo_img_height" xsi:type="number">64</argument>
-                                        </arguments>
-                                    </block>
                                 </container>
                             </container>
                         </container>

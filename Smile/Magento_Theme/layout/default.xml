@@ -56,18 +56,20 @@
                         <container name="header.wrapper.container" htmlClass="container" htmlTag="div" before="-">
                             <container name="header.wrapper.row" htmlClass="row" htmlTag="div" before="-">
                                 <container name="header.wrapper.innerbox" htmlClass="inner-box clearfix" htmlTag="div" before="-">
-                                    <container name="header.content.right" htmlClass="header-content-right col-lg-12" htmlTag="div" before="-">
+                                    <container name="header.content.left" htmlClass="header-content-left col-lg-3 col-md-3 col-sm-3 col-xs-12" htmlTag="div" before="-">
+                                        <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                                            <arguments>
+                                                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                                                <argument name="logo_img_width" xsi:type="number">189</argument>
+                                                <argument name="logo_img_height" xsi:type="number">64</argument>
+                                            </arguments>
+                                        </block>
+                                    </container>
+                                    <container name="header.content.right" htmlClass="header-content-right col-lg-12" htmlTag="div" after="header.content.left">
                                         <container name="container.custom.menu" htmlClass="container custom-menu" htmlTag="div" before="-">
                                             <block class="Pilot\Smile\Block\Html\Topmenu"  template="Magento_Theme::html/topmenu.phtml" />
                                         </container>
                                     </container>
-                                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
-                                        <arguments>
-                                            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-                                            <argument name="logo_img_width" xsi:type="number">189</argument>
-                                            <argument name="logo_img_height" xsi:type="number">64</argument>
-                                        </arguments>
-                                    </block>
                                 </container>
                             </container>
                         </container>
@@ -158,8 +160,8 @@
         </referenceContainer>
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
-        <move element="top.search" destination="header.content.right" />
-        <move element="minicart" destination="header.content.right" />
+        <move element="top.search" destination="container.custom.menu" />
+        <move element="minicart" destination="container.custom.menu" />
     </body>
 </page>
 

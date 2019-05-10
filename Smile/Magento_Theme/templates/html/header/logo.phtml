@@ -12,7 +12,7 @@
 ?>
 <?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
 <!--<span data-action="toggle-nav" class="action nav-toggle"><span><?= /* @escapeNotVerified */ __('Toggle Nav') ?></span></span>-->
-<div class="header-content-left col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<!-- <div class="header-content-left col-lg-3 col-md-3 col-sm-3 col-xs-12"> -->
     <?php if ($block->isHomePage()):?>
         <!-- <strong class="logo">     -->
         <a class="logo" href="<?= $block->getUrl('') ?>" title="<?= /* @escapeNotVerified */ $storeName ?>">
@@ -33,4 +33,4 @@
     <?php else:?>
         </a>
     <?php endif?>
-</div>
+<!-- </div> -->
