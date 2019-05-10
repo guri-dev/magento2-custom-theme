@@ -134,9 +134,7 @@
             <container name="page.bottom" label="Before Page Footer" htmlTag="div" htmlClass="content"/>
         </referenceContainer>
         <referenceContainer name="footer-container">
-            <container name="alo-footer-container" label="Footer main container" htmlTag="div" htmlClass="alo footer-container">
-
-            </container>
+                <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="Magento_Theme::html/footer.phtml"/>    
                 <!-- <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="Magento_Theme::html/footer.phtml"/> -->
                 <!-- <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/> -->
                 <!-- <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
@@ -165,7 +163,7 @@
         <move element="top.search" destination="container.custom.menu" />
         <move element="minicart" destination="container.custom.menu" />
         <move element="form.subscribe" destination="footer-container" />
-        <move element="footer_links" destination="alo-footer-container" />
+        <move element="footer_links_block" destination="footer-container" />
         <move element="copyright" destination="footer-container" />
     </body>
 </page>
