@@ -2535,7 +2535,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 
 /* Footer ================================================================================ */
-.footer-container {margin : 0 ;}
+.footer-container {margin : 0 ; background-color: #000;}
 .footer-container .block-footer-top {padding:  44px 0 15px;}
 .footer {padding:0px;text-align: left; }
 .footer .store-switcher { display:inline; margin:0 5px 0 0; color:#fff; }
