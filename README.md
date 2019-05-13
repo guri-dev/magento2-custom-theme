@@ -1,6 +1,6 @@
 # Smile [Magento 2 theme]
 
-One Paragraph of project description goes here
+Magento 2 custom theme for ecommerce shop.
 
 ## Getting Started
 
@@ -8,7 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Please check the basic requirements to run this theme on Magento 2 
+[a link](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+
 
 ```
 Give examples
