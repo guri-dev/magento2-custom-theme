@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="customer col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <div class="block-static4 static-alo">
+        <div class="block block-subscribe">
+            <div class="block-title">
+                <strong><span>Newsletter</span></strong>
+            </div>
+            <span style="display: none;" class="toggle-tab mobile"><span class="hidden">hidden</span></span>
+            <form action="http://m1.alothemes.com/smile/index.php/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+                <div class="block-content toggle-content">
+                    <div class="form-subscribe-header">
+                        <label for="newsletter">Sign Up for Our Newsletter:</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email">
+                    </div>
+                    <div class="actions">
+                        <button type="submit" title="Subscribe" class="button"><span><span>Subscribe</span></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <script type="text/javascript">
+                //<![CDATA[
+                var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                //]]>
+            </script>
+        </div>
+    </div>
+</div>

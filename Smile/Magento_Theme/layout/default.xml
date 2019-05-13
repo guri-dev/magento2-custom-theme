@@ -134,7 +134,21 @@
             <container name="page.bottom" label="Before Page Footer" htmlTag="div" htmlClass="content"/>
         </referenceContainer>
         <referenceContainer name="footer-container">
-                <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="Magento_Theme::html/footer.phtml"/>    
+                <container name="block-footer-top" label="Block Footer Top" htmlTag="div" htmlClass="block-footer-top" after="footer-container"> 
+                    <container name="block-footer-top-container" label="Block Footer Top Container" htmlTag="div" htmlClass="container" after="-">
+                        <container name="block-footer-top-row" label="Block Footer Top row grid" htmlTag="div" htmlClass="row show-grid" after="-">
+                            <container name="block-footer-top-footer" label="Block Footer Top footer" htmlTag="div" htmlClass="footer" after="-">
+                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.about" template="Magento_Theme::html/footer_about.phtml"/>   
+                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tweets" template="Magento_Theme::html/footer_tweets.phtml"/>
+                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tags" template="Magento_Theme::html/footer_tags.phtml"/>
+                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.subscribe" template="Magento_Theme::html/footer_subscribe.phtml"/> 
+                            </container>
+                        </container>
+                    </container> 
+                    <container name="block-footer-top-copyright" label="Block Footer Top copyright" htmlTag="div" htmlClass="block-footer-copyright" after="block-footer-top-container">
+                        <block class="Magento\Theme\Block\Html\Footer" name="footer.content.copyright" template="Magento_Theme::html/footer_copyright.phtml"/>   
+                    </container>
+                </container>
                 <!-- <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="Magento_Theme::html/footer.phtml"/> -->
                 <!-- <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/> -->
                 <!-- <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
@@ -162,9 +176,9 @@
         <referenceBlock name="skip_to_content" remove="true"/>
         <move element="top.search" destination="container.custom.menu" />
         <move element="minicart" destination="container.custom.menu" />
-        <move element="form.subscribe" destination="footer-container" />
-        <move element="footer_links_block" destination="footer-container" />
-        <move element="copyright" destination="footer-container" />
+        <move element="form.subscribe" destination="block-footer-top-footer" />
+        <move element="footer_links" destination="block-footer-top-copyright" />
+        <move element="copyright" destination="block-footer-top-copyright" />
     </body>
 </page>
 
