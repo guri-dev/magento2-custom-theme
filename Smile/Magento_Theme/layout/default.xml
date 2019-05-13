@@ -141,12 +141,20 @@
                                 <block class="Magento\Theme\Block\Html\Footer" name="footer.content.about" template="Magento_Theme::html/footer_about.phtml"/>   
                                 <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tweets" template="Magento_Theme::html/footer_tweets.phtml"/>
                                 <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tags" template="Magento_Theme::html/footer_tags.phtml"/>
-                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.subscribe" template="Magento_Theme::html/footer_subscribe.phtml"/> 
+                                <container name="block-footer-top-footer-copyright" label="Block Footer Top copyright" htmlTag="div" htmlClass="customer col-lg-3 col-md-3 col-sm-3 col-xs-12" after="-">
+                                    <block class="Magento\Theme\Block\Html\Footer" name="footer.content.subscribe.block" template="Magento_Theme::html/footer_subscribe.phtml"/>  
+                                </container>
                             </container>
                         </container>
                     </container> 
                     <container name="block-footer-top-copyright" label="Block Footer Top copyright" htmlTag="div" htmlClass="block-footer-copyright" after="block-footer-top-container">
-                        <block class="Magento\Theme\Block\Html\Footer" name="footer.content.copyright" template="Magento_Theme::html/footer_copyright.phtml"/>   
+                        <container name="block-footer-copyright-container" label="Block Footer copyright Container" htmlTag="div" htmlClass="container" after="-">
+                            <container name="block-footer-copyright-footer" label="Block Footer copyright footer" htmlTag="div" htmlClass="footer" after="-">
+                                <container name="block-footer-copyright-row" label="Block Footer copyright row grid" htmlTag="div" htmlClass="row" after="-">
+                                      <block class="Magento\Theme\Block\Html\Footer" name="footer.content.copyright" template="Magento_Theme::html/footer_copyright.phtml"/>                          
+                                </container>
+                            </container>
+                        </container>
                     </container>
                 </container>
                 <!-- <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="Magento_Theme::html/footer.phtml"/> -->
@@ -174,11 +182,13 @@
         </referenceContainer>
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
         <move element="top.search" destination="container.custom.menu" />
         <move element="minicart" destination="container.custom.menu" />
-        <move element="form.subscribe" destination="block-footer-top-footer" />
-        <move element="footer_links" destination="block-footer-top-copyright" />
-        <move element="copyright" destination="block-footer-top-copyright" />
+        <move element="footer_links" destination="block-footer-copyright-row" />
+        <!-- <move element="copyright" destination="block-footer-top-copyright" /> -->
+        <!-- <move element="form.subscribe" destination="block-footer-top-footer-copyright"  />  -->
     </body>
 </page>
 
