@@ -82,7 +82,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Useful Commands for Magento 2
 
-//update DB command
+update DB command
 ```
 sudo php bin/magento setup:upgrade
 ```
@@ -91,23 +91,23 @@ sudo php bin/magento setup:upgrade
 sudo php bin/magento setup:db-schema:upgrade
 ```
 
-//deploy static content
+deploy static content
 ```
 sudo php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
 ```
 
-// change permissions
+change permissions
 ```
 sudo chmod -R 777 var pub
 ```
 
 
-//deply setup content
+deply setup content
 ```
 sudo php -d memory_limit=-1 bin/magento setup:di:compile
 ```
 
-//enable/disable module 
+enable/disable module 
 ```
 sudo bin/magento module:disable --clear-static-content Component_Name
 ```
