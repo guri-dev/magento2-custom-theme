@@ -184,9 +184,12 @@
                 class="Magento\Customer\Block\CustomerData"
                 template="Magento_Customer::js/customer-data.phtml"/>
         </referenceContainer>
+        
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true" />
+
         <move element="top.search" destination="container.custom.menu" />
         <move element="minicart" destination="container.custom.menu" />
         <move element="footer_links" destination="block-footer-copyright-row-left" />
