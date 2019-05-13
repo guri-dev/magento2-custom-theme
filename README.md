@@ -80,8 +80,34 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Useful Commands for Magento 2
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+//update DB command
+```
+sudo php bin/magento setup:upgrade
+```
+
+```
+sudo php bin/magento setup:db-schema:upgrade
+```
+
+//deploy static content
+```
+sudo php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
+```
+
+// change permissions
+```
+sudo chmod -R 777 var pub
+```
+
+
+//deply setup content
+```
+sudo php -d memory_limit=-1 bin/magento setup:di:compile
+```
+
+//enable/disable module 
+```
+sudo bin/magento module:disable --clear-static-content Component_Name
+```
