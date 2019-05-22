@@ -15,9 +15,16 @@
         <span class="toggle-tab mobile" style="display: none;"><span class="hidden">hidden</span></span>
         <div class="toggle-content">
             <div class="logo-footer"><img class="icon-about" alt="Smile" src="<?php echo $this->getViewFileUrl('images/logo-footer.png'); ?>">
-                <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque lauda totam rem aperiam sunshine love.</p>
+                <p><?php echo $block->getOptions()['footer_about_us'];?></p>
             </div>
-            <div class="social-links icon-wrapper"><a class="icon-facebook" href="#"><em class="fa fa-facebook">&nbsp;</em></a> <a class="icon-twitter" href="#"><em class="fa fa-twitter">&nbsp;</em></a> <a class="icon-rss" href="#"><em class="fa fa-rss">&nbsp;</em></a> <a class="icon-envelope " href="#"><em class="fa fa-envelope ">&nbsp;</em></a> <a class="icon-pinterest" href="#"><em class="fa fa-pinterest">&nbsp;</em></a> <a class="icon-instagram" href="#"><em class="fa fa-instagram">&nbsp;</em></a></div>
+            <div class="social-links icon-wrapper">
+                <a class="icon-facebook" href="<?=!empty($block->getOptions()['footer_facebook']) ? $block->getOptions()['footer_facebook']:''?>"><em class="fa fa-facebook">&nbsp;</em></a> 
+                <a class="icon-twitter" href="<?=!empty($block->getOptions()['footer_twitter_handle']) ? $block->getOptions()['footer_twitter_handle']:''?>"><em class="fa fa-twitter">&nbsp;</em></a>
+                <a class="icon-rss" href="<?=!empty($block->getOptions()['footer_rss']) ? $block->getOptions()['footer_rss']:''?>"><em class="fa fa-rss">&nbsp;</em></a>
+                <a class="icon-envelope " href="mailto:<?=!empty($block->getOptions()['footer_email']) ? $block->getOptions()['footer_email']:''?>"><em class="fa fa-envelope ">&nbsp;</em></a>
+                <a class="icon-pinterest" href="<?=!empty($block->getOptions()['footer_pinterest']) ? $block->getOptions()['footer_pinterest']:''?>"><em class="fa fa-pinterest">&nbsp;</em></a>
+                <a class="icon-instagram" href="<?=!empty($block->getOptions()['footer_isntagram']) ? $block->getOptions()['footer_isntagram']:''?>"><em class="fa fa-instagram">&nbsp;</em></a>
+            </div>
         </div>
     </div>
 </div>

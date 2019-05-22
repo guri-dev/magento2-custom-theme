@@ -138,7 +138,7 @@
                     <container name="block-footer-top-container" label="Block Footer Top Container" htmlTag="div" htmlClass="container" after="-">
                         <container name="block-footer-top-row" label="Block Footer Top row grid" htmlTag="div" htmlClass="row show-grid" after="-">
                             <container name="block-footer-top-footer" label="Block Footer Top footer" htmlTag="div" htmlClass="footer" after="-">
-                                <block class="Magento\Theme\Block\Html\Footer" name="footer.content.about" template="Magento_Theme::html/footer_about.phtml"/>   
+                                <block class="Pilot\Smile\Block\Options" name="footer.content.about" template="Magento_Theme::html/footer_about.phtml"/>   
                                 <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tweets" template="Magento_Theme::html/footer_tweets.phtml"/>
                                 <block class="Magento\Theme\Block\Html\Footer" name="footer.content.tags" template="Magento_Theme::html/footer_tags.phtml"/>
                                 <container name="block-footer-top-footer-copyright" label="Block Footer Top copyright" htmlTag="div" htmlClass="customer col-lg-3 col-md-3 col-sm-3 col-xs-12" after="-">

@@ -2,8 +2,8 @@
                         <div class="box-email"><span class="pull-left"><em class="fa fa-envelope-o">&nbsp;</em></span>
                             <div class="media-body pull-left">
                                 <p>
-                                <a href="mailto:<?php echo !empty($block->getEmail()[0]['option_value']) ?$block->getEmail()[0]['option_value']:'';?>">
-                                    <?php echo !empty($block->getEmail()[0]['option_value']) ?$block->getEmail()[0]['option_value']:'';?>
+                                <a href="mailto:<?php echo !empty($block->getEmail()['header_email']) ?$block->getEmail()['header_email']:'';?>">
+                                    <?php echo !empty($block->getEmail()['header_email']) ?$block->getEmail()['header_email']:'';?>
                                </p>
                             </div>
                         </div>

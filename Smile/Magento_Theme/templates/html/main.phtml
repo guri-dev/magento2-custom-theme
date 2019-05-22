@@ -12,73 +12,6 @@
                 <div class="block block-subscribe popup" style="display:none;">
                     <div class="fancybox-inline-tmp" style="display: none;"></div>
                 </div>
-                <script type="text/javascript">
-                    //<![CDATA[
-                    // jQuery(document).ready(function($) {
-                    //     // Mage.Cookies.set('popupNewsletterOff', undefined); // for Test
-                    //     (function(selector) {
-                    //         var popupCookie = Mage.Cookies.get('popupNewsletterOff');
-                    //         var overlay = Themecfg.newsletter.overlayColor;
-                    //         if (!popupCookie || popupCookie == 'undefined') {
-                    //             var $content = $(selector);
-                    //             var image = Themecfg.newsletter.background_image;
-                    //             var color = Themecfg.newsletter.background_color;
-                    //             var imageUrl = "http://m1.alothemes.com/smile/media/magiccart/" + image;
-                    //             var popup = $('#popup-newsletter', $content);
-                    //             var pwidth = Themecfg.newsletter.width;
-                    //             var pheight = Themecfg.newsletter.height;
-                    //             pwidth = typeof pwidth !== 'undefined' ? pwidth : 800;
-                    //             pheight = typeof pheight !== 'undefined' ? pheight : 400;
-                    //             overlay = typeof overlay !== 'undefined' ? overlay : '#363636';
-                    //             popup.width(pwidth).height(pheight)
-                    //             if (Themecfg.newsletter.background_image) popup.css('background-image', 'url(' + imageUrl + ')');
-                    //             else if (color) popup.css('background-color', color);
-                    //             setTimeout(function() {
-                    //                 $content.fancybox({
-                    //                     padding: '0px',
-                    //                     transitionIn: 'fade',
-                    //                     transitionOut: 'fade',
-                    //                     // showCloseButton: false,
-                    //                     centerOnScroll: true,
-                    //                     type: 'inline',
-                    //                     overlayColor: overlay,
-                    //                     href: '#popup-newsletter',
-                    //                 }).trigger('click');
-                    //             }, 100);
-                    //             $('.subscribe-bottom input', popup).on('click', function() {
-                    //                 if ($(this).parent().find('input:checked').length) {
-                    //                     Mage.Cookies.set('popupNewsletterOff', true);
-                    //                 } else {
-                    //                     Mage.Cookies.set('popupNewsletterOff', undefined);
-                    //                 }
-                    //             });
-                    //             if (Themecfg.newsletter.firstOnly > 0) Mage.Cookies.set('popupNewsletterOff', true);
-                    //             popup.find('.actions button').on('click', function() {
-                    //                 Mage.Cookies.set('popupNewsletterOff', true);
-                    //                 Mage.Cookies.set('popupNewsletterMessages', true);
-                    //             });
-                    //         } else {
-                    //             var messages = Mage.Cookies.get('popupNewsletterMessages');
-                    //             if (messages) {
-                    //                 var $messages = $('.messages').attr('id', 'popupNewsletterMessages').wrap("<div></div>");
-                    //                 $messages.fancybox({
-                    //                     padding: '0px',
-                    //                     transitionIn: 'fade',
-                    //                     transitionOut: 'fade',
-                    //                     // showCloseButton: false,
-                    //                     centerOnScroll: true,
-                    //                     type: 'inline',
-                    //                     overlayColor: overlay,
-                    //                     href: '#popupNewsletterMessages',
-                    //                 }).trigger('click');
-                    //                 Mage.Cookies.set('popupNewsletterMessages', undefined);
-                    //             }
-                    //         }
-
-                    //     })(".block-subscribe.popup");
-                    // });
-                    //]]>
-                </script>
                 <div class="std" style="padding-top:20px;">
                     <div class="row">
                         <?php
@@ -110,7 +43,7 @@
                     <div class="alo alo-featured">
                         <div class="hdovwavcfs magiccategory">
                             <div class="block-title-tabs">
-                                <h3 class="title"><span>Featured Products</span></h3>
+                                <h3 class="title"><span>Featured Products</span></h3>                                
                                 <ul class="magictabs" data-ajax="{&quot;limit&quot;:&quot;8&quot;,&quot;productDelay&quot;:&quot;500&quot;,&quot;widthImages&quot;:&quot;269&quot;,&quot;heightImages&quot;:&quot;360&quot;,&quot;action&quot;:&quot;cart,compare,wishlist,review&quot;,&quot;types&quot;:&quot;featured&quot;}">
                                     <li class="item active loaded" data-type="46"><span class="title">All</span></li>
                                     <li class="item " data-type="47"><span class="title">Clothing</span></li>
@@ -125,7 +58,12 @@
 
                                 <div class="mage-magictabs mc-46">
                                     <ul class="flexisel-content products-grid 46 zoomOut play">
-
+                                     <?php
+                                        $productCollection = $block->getProductCollection();
+                                        foreach ($productCollection as $product) {
+                                            $imgUrl = $block->getItemImage($product->getId());   
+                                            echo $imgUrl;
+                                        ?>
                                         <li style="animation-delay: 0ms; width: 262.4px; margin-left: 0px; clear: both;" class="item item-animate">
                                             <div class="per-product">
                                                 <div class="images-container">
@@ -149,8 +87,8 @@
                                                 </div>
                                                 <div class="products-textlink clearfix">
                                                     <h2 class="product-name">
-                                <a href="http://m1.alothemes.com/smile/index.php/men/all/donec-interdum.html" title="Donec interdum">Donec interdum</a>
-                            </h2>
+                                                        <a href="<?php echo $product->getProductUrl(); ?>" title="Donec interdum"><?php echo $product->getName();?></a>
+                                                    </h2>
                                                     <div class="ratings">
                                                         <div class="rating-box">
                                                             <div class="rating" style="width:80%"></div>
@@ -169,7 +107,8 @@
                                                         <p class="special-price">
                                                             <span class="price-label">Special Price</span>
                                                             <span class="price" id="product-price-2">
-                    $57.00                </span>
+                                                            <?php echo $product->getFinalPrice();?>
+                                                            </span>
                                                         </p>
 
                                                     </div>
@@ -177,6 +116,8 @@
                                                 </div>
                                             </div>
                                         </li>
+
+                                        <?php } ?>
 
                                         <li style="animation-delay: 500ms; width: 262.4px; margin-left: 30px;" class="item item-animate">
                                             <div class="per-product">
