@@ -61,15 +61,16 @@
                                      <?php
                                         $productCollection = $block->getProductCollection();
                                         foreach ($productCollection as $product) {
-                                            $imgUrl = $block->getItemImage($product->getId());   
-                                            echo $imgUrl;
+                                            $imageType = 'product_base_image'; 
+                                            $image = $block->getImage($product, $imageType);
+                                           // echo $image->getImageUrl(); 
                                         ?>
                                         <li style="animation-delay: 0ms; width: 262.4px; margin-left: 0px; clear: both;" class="item item-animate">
                                             <div class="per-product">
                                                 <div class="images-container">
                                                     <span class="sticker top-left"><span class="labelnew">New</span></span><span class="sticker top-right"><span class="labelsale">Sale</span></span>
                                                     <a href="http://m1.alothemes.com/smile/index.php/men/all/donec-interdum.html" title="Donec interdum" class="product-image quickview">
-                                                        <img class="img-responsive" src="http://m1.alothemes.com/smile/media/catalog/product/cache/1/small_image/269x360/9df78eab33525d08d6e5fb8d27136e95/p/-/p-02_1.jpg" width="269" height="360" alt="Donec interdum">
+                                                        <img class="img-responsive" src="<?php echo $image->getImageUrl();?>" width="269" height="360" alt="Donec interdum">
                                                     </a>
                                                     <div class="link-view">
                                                         <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/2" class="link-quickview"><i class="fa fa-search"></i>                                </a>
@@ -116,195 +117,7 @@
                                                 </div>
                                             </div>
                                         </li>
-
-                                        <?php } ?>
-
-                                        <li style="animation-delay: 500ms; width: 262.4px; margin-left: 30px;" class="item item-animate">
-                                            <div class="per-product">
-                                                <div class="images-container">
-                                                    <a href="http://m1.alothemes.com/smile/index.php/men/all/cras-volutpat.html" title="Cras volutpat" class="product-image quickview">
-                                                        <img class="img-responsive" src="http://m1.alothemes.com/smile/media/catalog/product/cache/1/small_image/269x360/9df78eab33525d08d6e5fb8d27136e95/p/-/p-07.jpg" width="269" height="360" alt="Cras volutpat">
-                                                    </a>
-                                                    <div class="link-view">
-                                                        <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/5" class="link-quickview"><i class="fa fa-search"></i>                                </a>
-                                                    </div>
-                                                    <div class="actions-no">
-                                                        <div class="actions">
-                                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/5/form_key/PxORu1unVBABcBcN/')" magiccartevent="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/5/form_key/PxORu1unVBABcBcN/')"><span><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></span>
-                                                            </button>
-                                                            <ul class="add-to-links">
-                                                                <li class=""><a href="http://m1.alothemes.com/smile/index.php/wishlist/index/add/product/5/form_key/PxORu1unVBABcBcN/" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
-                                                                <li class=""><span class="separator">|</span> <a href="http://m1.alothemes.com/smile/index.php/catalog/product_compare/add/product/5/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/form_key/PxORu1unVBABcBcN/" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="products-textlink clearfix">
-                                                    <h2 class="product-name">
-                                <a href="http://m1.alothemes.com/smile/index.php/men/all/cras-volutpat.html" title="Cras volutpat">Cras volutpat</a>
-                            </h2>
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div class="rating" style="width:67%"></div>
-                                                        </div>
-                                                        <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://m1.alothemes.com/smile/index.php/review/product/list/id/5/category/46/'; return false;">1 Review(s)</a></span>
-                                                    </div>
-
-                                                    <div class="price-box">
-                                                        <span class="regular-price" id="product-price-5">
-                                            <span class="price">$90.00</span> </span>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li style="animation-delay: 1000ms; width: 262.4px; margin-left: 30px;" class="item item-animate">
-                                            <div class="per-product">
-                                                <div class="images-container">
-                                                    <span class="sticker top-right"><span class="labelsale">Sale</span></span>
-                                                    <a href="http://m1.alothemes.com/smile/index.php/men/all/quisque-neque.html" title="Quisque neque" class="product-image quickview">
-                                                        <img class="img-responsive" src="http://m1.alothemes.com/smile/media/catalog/product/cache/1/small_image/269x360/9df78eab33525d08d6e5fb8d27136e95/p/-/p-06_1.jpg" width="269" height="360" alt="Quisque neque">
-                                                    </a>
-                                                    <div class="link-view">
-                                                        <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/6" class="link-quickview"><i class="fa fa-search"></i>                                </a>
-                                                    </div>
-                                                    <div class="actions-no">
-                                                        <div class="actions">
-                                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/6/form_key/PxORu1unVBABcBcN/')" magiccartevent="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/6/form_key/PxORu1unVBABcBcN/')"><span><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></span>
-                                                            </button>
-                                                            <ul class="add-to-links">
-                                                                <li class=""><a href="http://m1.alothemes.com/smile/index.php/wishlist/index/add/product/6/form_key/PxORu1unVBABcBcN/" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
-                                                                <li class=""><span class="separator">|</span> <a href="http://m1.alothemes.com/smile/index.php/catalog/product_compare/add/product/6/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/form_key/PxORu1unVBABcBcN/" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="products-textlink clearfix">
-                                                    <h2 class="product-name">
-                                <a href="http://m1.alothemes.com/smile/index.php/men/all/quisque-neque.html" title="Quisque neque">Quisque neque</a>
-                            </h2>
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div class="rating" style="width:60%"></div>
-                                                        </div>
-                                                        <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://m1.alothemes.com/smile/index.php/review/product/list/id/6/category/46/'; return false;">1 Review(s)</a></span>
-                                                    </div>
-
-                                                    <div class="price-box">
-
-                                                        <p class="old-price">
-                                                            <span class="price-label">Regular Price:</span>
-                                                            <span class="price" id="old-price-6">
-                    $92.00                </span>
-                                                        </p>
-
-                                                        <p class="special-price">
-                                                            <span class="price-label">Special Price</span>
-                                                            <span class="price" id="product-price-6">
-                    $76.00                </span>
-                                                        </p>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li style="animation-delay: 1500ms; width: 262.4px; margin-left: 30px;" class="item item-animate">
-                                            <div class="per-product">
-                                                <div class="images-container">
-                                                    <a href="http://m1.alothemes.com/smile/index.php/men/all/mauris-sollicitudin.html" title="Mauris sollicitudin" class="product-image quickview">
-                                                        <img class="img-responsive" src="http://m1.alothemes.com/smile/media/catalog/product/cache/1/small_image/269x360/9df78eab33525d08d6e5fb8d27136e95/p/-/p-08_2.jpg" width="269" height="360" alt="Mauris sollicitudin">
-                                                    </a>
-                                                    <div class="link-view">
-                                                        <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/7" class="link-quickview"><i class="fa fa-search"></i>                                </a>
-                                                    </div>
-                                                    <div class="actions-no">
-                                                        <div class="actions">
-                                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/7/form_key/PxORu1unVBABcBcN/')" magiccartevent="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/7/form_key/PxORu1unVBABcBcN/')"><span><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></span>
-                                                            </button>
-                                                            <ul class="add-to-links">
-                                                                <li class=""><a href="http://m1.alothemes.com/smile/index.php/wishlist/index/add/product/7/form_key/PxORu1unVBABcBcN/" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
-                                                                <li class=""><span class="separator">|</span> <a href="http://m1.alothemes.com/smile/index.php/catalog/product_compare/add/product/7/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/form_key/PxORu1unVBABcBcN/" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="products-textlink clearfix">
-                                                    <h2 class="product-name">
-                                <a href="http://m1.alothemes.com/smile/index.php/men/all/mauris-sollicitudin.html" title="Mauris sollicitudin">Mauris sollicitudin</a>
-                            </h2>
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div class="rating" style="width:73%"></div>
-                                                        </div>
-                                                        <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://m1.alothemes.com/smile/index.php/review/product/list/id/7/category/46/'; return false;">3 Review(s)</a></span>
-                                                    </div>
-
-                                                    <div class="price-box">
-                                                        <span class="regular-price" id="product-price-7">
-                                            <span class="price">$130.00</span> </span>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li style="animation-delay: 2000ms; width: 262.4px; margin-left: 0px; clear: both;" class="item item-animate">
-                                            <div class="per-product">
-                                                <div class="images-container">
-                                                    <span class="sticker top-left"><span class="labelnew">New</span></span><span class="sticker top-right"><span class="labelsale">Sale</span></span>
-                                                    <a href="http://m1.alothemes.com/smile/index.php/men/all/configurable-product.html" title="Configurable Product" class="product-image quickview">
-                                                        <img class="img-responsive" src="http://m1.alothemes.com/smile/media/catalog/product/cache/1/small_image/269x360/9df78eab33525d08d6e5fb8d27136e95/p/-/p-10_1.jpg" width="269" height="360" alt="Configurable Product">
-                                                    </a>
-                                                    <div class="link-view">
-                                                        <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/9" class="link-quickview"><i class="fa fa-search"></i>                                </a>
-                                                    </div>
-                                                    <div class="actions-no">
-                                                        <div class="actions">
-                                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://m1.alothemes.com/smile/index.php/men/all/configurable-product.html')" magiccartevent="setLocation('http://m1.alothemes.com/smile/index.php/men/all/configurable-product.html')"><span><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></span>
-                                                            </button>
-                                                            <ul class="add-to-links">
-                                                                <li class=""><a href="http://m1.alothemes.com/smile/index.php/wishlist/index/add/product/9/form_key/PxORu1unVBABcBcN/" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
-                                                                <li class=""><span class="separator">|</span> <a href="http://m1.alothemes.com/smile/index.php/catalog/product_compare/add/product/9/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/form_key/PxORu1unVBABcBcN/" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="products-textlink clearfix">
-                                                    <h2 class="product-name">
-                                <a href="http://m1.alothemes.com/smile/index.php/men/all/configurable-product.html" title="Configurable Product">Configurable Product</a>
-                            </h2>
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div class="rating" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://m1.alothemes.com/smile/index.php/review/product/list/id/9/category/46/'; return false;">2 Review(s)</a></span>
-                                                    </div>
-
-                                                    <div class="price-box">
-
-                                                        <p class="old-price">
-                                                            <span class="price-label">Regular Price:</span>
-                                                            <span class="price" id="old-price-9">
-                    $89.00                </span>
-                                                        </p>
-
-                                                        <p class="special-price">
-                                                            <span class="price-label">Special Price</span>
-                                                            <span class="price" id="product-price-9">
-                    $86.00                </span>
-                                                        </p>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </li>
-
+                                       <?php } ?>
                                         <li style="animation-delay: 2500ms; width: 262.4px; margin-left: 30px;" class="item item-animate">
                                             <div class="per-product">
                                                 <div class="images-container">
