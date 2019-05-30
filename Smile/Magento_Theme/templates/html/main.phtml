@@ -68,26 +68,26 @@
                                             <div class="per-product">
                                                 <div class="images-container">
                                                     <span class="sticker top-left"><span class="labelnew">New</span></span><span class="sticker top-right"><span class="labelsale">Sale</span></span>
-                                                    <a href="http://m1.alothemes.com/smile/index.php/men/all/donec-interdum.html" title="Donec interdum" class="product-image quickview">
-                                                        <img class="img-responsive" src="<?php echo $image->getImageUrl();?>" width="269" height="360" alt="Donec interdum">
+                                                    <a href="<?php echo $product->getProductUrl(); ?>" title="<?php echo $product->getName(); ?>" class="product-image quickview">
+                                                        <img class="img-responsive" src="<?php echo $image->getImageUrl();?>" width="269" height="360" alt="<?php echo $product->getName(); ?>">
                                                     </a>
                                                     <div class="link-view">
-                                                        <a title="Quick View" href="http://m1.alothemes.com/smile/index.php/magicshop/quickview/view/id/2" class="link-quickview"><i class="fa fa-search"></i>                                </a>
+                                                        <a title="Quick View" href="<?php echo $product->getProductUrl(); ?>" class="link-quickview"><i class="fa fa-search"></i>                                </a>
                                                     </div>
                                                     <div class="actions-no">
                                                         <div class="actions">
                                                             <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/2/form_key/PxORu1unVBABcBcN/')" magiccartevent="setLocation('http://m1.alothemes.com/smile/index.php/checkout/cart/add/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/product/2/form_key/PxORu1unVBABcBcN/')"><span><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></span>
                                                             </button>
                                                             <ul class="add-to-links">
-                                                                <li class=""><a href="http://m1.alothemes.com/smile/index.php/wishlist/index/add/product/2/form_key/PxORu1unVBABcBcN/" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
-                                                                <li class=""><span class="separator">|</span> <a href="http://m1.alothemes.com/smile/index.php/catalog/product_compare/add/product/2/uenc/aHR0cDovL20xLmFsb3RoZW1lcy5jb20vc21pbGUvP19fX3N0b3JlPWVuZ2xpc2g,/form_key/PxORu1unVBABcBcN/" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
+                                                                <li class=""><a href="<?php echo $product->getProductUrl(); ?>" title="Add to Wishlist" class="link-wishlist"><i class="fa fa fa-heart-o"></i></a></li>
+                                                                <li class=""><span class="separator">|</span> <a href="<?php echo $product->getProductUrl(); ?>" title="Add to Compare" class="link-compare"><i class="fa fa-signal"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="products-textlink clearfix">
                                                     <h2 class="product-name">
-                                                        <a href="<?php echo $product->getProductUrl(); ?>" title="Donec interdum"><?php echo $product->getName();?></a>
+                                                        <a href="<?php echo $product->getProductUrl(); ?>" title="<?php echo $product->getName();?>"><?php echo $product->getName();?></a>
                                                     </h2>
                                                     <div class="ratings">
                                                         <div class="rating-box">
@@ -101,7 +101,8 @@
                                                         <p class="old-price">
                                                             <span class="price-label">Regular Price:</span>
                                                             <span class="price" id="old-price-2">
-                    $67.00                </span>
+                                                            <?php echo number_format((float)$product->getPrice(), 2, '.', '');?>
+                                                            </span>
                                                         </p>
 
                                                         <p class="special-price">
